@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                </div>
+                
+            </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                </h:form>
+                
+                <div class="link">
+                 
+                    
+                    
+                  </div>
+                <br/>
+                <br/>
+                <h:form>
+                <FONT COLOR="orange"> <h1>Formulario de Contacto</h1> </FONT>
+                <br/>
+                <br/>
+                
+                 <h:form id="form">
+                     <p:panel id="panel" header="INGRESE SUS DATOS" style="margin-bottom:10px;">
+                         
+                          <p:messages id="messages" />
+                <p:panelGrid columns="2">
+                   
+                   
+                    <h:outputText value="Dni "  />
+                <p:inputText value="#{sistemaBean.visitante.ciVisitante}" onclick="this.value = ''"/>
+                <h:outputText value="Nombre"  />
+                <p:inputText value="#{sistemaBean.visitante.nombreVisitante}" onclick="this.value = ''"/>
+                
+                <h:outputText value="Apellido"  />
+                <p:inputText value="#{sistemaBean.visitante.apellidoVisitante}" onclick="this.value = ''"/>
+
+                
+                <h:outputText value="Telefono "  />
+                <p:inputText value="#{sistemaBean.visitante.telefonoVisitante}" onclick="this.value = ''"/>
+
+                <h:outputText value="Correo Electronico"  />
+                <p:inputText value="#{sistemaBean.visitante.correoVisitante}" onclick="this.value = ''"/>
+                
+    
+                   <p:outputLabel for="car" value="Ciudad " />
+                   <p:selectOneMenu id="car" value="#{sistemaBean.visitante.ciudad}">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{selectOneMenuView.cars}" />
+        </p:selectOneMenu>   
+                    
+                
+                
+                <h:outputText value="Empresa"  />
+                <p:inputText value="#{sistemaBean.visitante.empresa}" onclick="this.value = ''"/>
+                
+                <h:outputText value="Mensaje"  />
+              
+                <p:inputTextarea rows="5" cols="30" counter="display" maxlength="80" counterTemplate="{0} Caracteres Restantes." autoResize="false" value="#{sistemaBean.visitante.mensaje}" />
+                    <br />
+                    <h:outputText id="display" />
+                </p:panelGrid>
+                
+                </p:panel>
+            <p:toolbar>
+        <f:facet name="left">
+            <p:commandButton value="Guardar" action="#{sistemaBean.grabarVisitante()}" style="margin-right:20px;" ajax="false"  />
+              
+        </f:facet>
+        
+               <f:facet name="right">
+            
+            <p:commandButton value="BORRAR CAMPOS" update="panel" process="@this" action="#{resetInputView.reset}"  style="margin-right:20px;" />
+            
+        </f:facet>
+          
+    </p:toolbar>
+      
+                     </h:form>
+      
+             
+                </h:form>
+               <h:form>
+                   <p:commandButton value ="AGENDAR CITAS" id="btnRegresar2" action="../PaginaInicial/agendamientoCitas.xhtml" style="margin-left:450px"  ajax="false"  />
+            
+            
+        </h:form>  
+            </div>
+            </div>
+        
+<h:head>
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

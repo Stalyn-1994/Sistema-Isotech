@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+            
+             <div class="navbar">
+                  <div class="link ">
+                  <a href="../PaginasUsuarios/1_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_agendamientoCitas_3.xhtml">Agenda una Cita</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_documentacion.xhtml">Documentacion</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_progreso.xhtml">Consulta tu Progreso</a>
+                </div>
+                
+                <div class="link ">
+                   <a href="../PaginasUsuarios/1_Administrar.xhtml">Datos Personales</a>
+                </div>
+                
+           </div>
+            <div class="content">
+                  <br/>
+                    <br/>
+                <h:form>  
+                    <div class="caratula">
+                    </div>
+    <p:growl id="messages"/>
+    
+     <FONT SIZE="+2"><p align="right"><i><b>
+                     
+     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                     
+                     <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+     
+     </b></i></p></FONT>
+                    <br/>
+                    <br/>                
+    
+    
+</h:form>
+                
+                <div class="link">
+                    
+                    <p align="center"> <img class="imgi" src="../recursos/img/ISO2.png"></img> </p> 
+                    
+                  </div>
+                    <p:contentFlow  value="#{sistemaBean.calidad}" var="image">
+                        <p:graphicImage  name="../recursos/imagen/nature/#{image}"  styleClass="content"/>
+                     
+                    </p:contentFlow>
+                    
+                       <h:form id="form">  
+    <p:growl id="msgs" showDetail="true" />
+  <br/>
+                    <br/> 
+                     <br/>
+                    <br/> 
+   
+    <h3>CONSULTORIA SOBRE CALIDAD</h3>
+    <p:accordionPanel multiple="true">
+        <p:tab title="¿Ques es la ISO 9001?">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="../recursos/imagen/nature/sigoPregunta.jpg" />
+                <h:outputText
+                    value="La norma de calidad ISO 9001 garantiza la calidad de los productos y servicios de las empresas, 
+                    con la finalidad de satisfacer al cliente final. Esta norma promueve que los productos y servicios 
+                    ofrecidos por una empresa cumplan con unas exigencias tanto internas como externas de la propia
+                    organización.
+                    Creada el año 1987 por la Organización Internacional de la Normalización, la norma ISO 9001 tiene 
+                    actualmente más de 1.5 millones de usuarios alrededor del mundo y cuenta con un gran reconocimiento a
+                    nivel mundial, siendo la certificación más demandada internacionalmente.  La última actualización de 
+                    la certificación ISO 9001 fue en 2015." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="¿Porque es la ISO 9001 útil para mi empresa?">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="../recursos/imagen/nature/util.png" />
+                <h:outputText value="Las empresas certificadas con ISO 9001 garantizan a sus clientes la calidad de los 
+                              productos y servicios que ofrecen; satisfaciendo, así, los requisitos del cliente final. 
+                              Una empresa certificada con ISO 9001 obtiene beneficios, tanto a nivel de satisfacción y 
+                              fidelización de los clientes, como en resultados económicos, centrados en los cuatro siguientes 
+                              principios:
+                              
+                                    Sistematización. Favorece el seguimiento de ventas, debido a que los vendedores pueden dirigir mejor su atención hacia el cliente y sus necesidades, planificando y organizando de mejor manera su trabajo.
+                                    Reducción de errores. Utilizando la calidad como elemento competitivo.
+                                    Lealtad del cliente. El consumidor confiará más en un producto o servicio que certifica la calidad, que en uno que no puede garantizar la calidad total en todos sus procesos.
+                                    Enfoque internacional. La norma ISO 9001 es de carácter internacional y asegura la calidad tanto a nivel nacional como en el extranjero.
+                                    Aunque la utilidad del certificado ISO 9001 va más allá de la obtención del sello. Una buena auditoría que cuente con las 5 claves, aportará valor a tu empresa en todo momento.
+                                    Para saber más, te recomendamos leer este artículo de nuestro blog" />
+           </h:panelGrid>
+        </p:tab>
+        <p:tab title="Proceso de certificacion de la norma ISO 9001 como sello de calidad">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage width="420x431" name="../recursos/imagen/nature/proceso.jpg" />
+                <h:outputText value="Antes del inicio de cualquier proceso, se enviará al solicitante una oferta señalando el alcance de los trabajos de certificación y los costes asociados.
+                                        El cliente deberá aceptar, por escrito (solicitud de certificación) la oferta.
+                                        A partir de este momento, desde el departamento técnico de SPG, se planificará la auditoría
+                                        (fechas y equipo auditor calificado).
+                                        Al firmar la solicitud de certificación el cliente declara que ha leído y acepta los derechos y 
+                                        deberes que en este documento figuran.
+                                        Si el cliente la hubiese solicitado, se realizará una auditoría previa antes de la auditoría de certificación. 
+                                        Esta auditoría tiene como finalidad verificar a grandes rasgos el grado de implantación del Sistema de Gestión y 
+                                        detectar las posibles deficiencias del mismo. Se emite un informe de auditoria con las desviaciones y posteriormente, 
+                                        
+                                        se acuerda con el cliente la realización de la Fase I de auditoría, cuando el cliente considere que ya están preparados. 
+                                        En todo caso, en la auditoria de certificación, se audita de nuevo todo el sistema y puede ser que aparezcan no conformidades 
+                                        no detectadas en la auditoría previa. El informe de auditoría previa es sólo informativo y es en la auditoría de certificación
+                                        que la empresa tiene la obligación de demostrar que el sistema implantado cumple con todos los requisitos de la norma auditada.
+                                        El cliente puede solicitara SPG los antecedentes del equipo auditor asignado para, si lo estima oportuno, poder objetar la designación de cualquier miembro de dicho equipo.
+                                        Para iniciar el proceso de certificación, el cliente deberá como mínimo: tener documentado e implantado un sistema de gestión que cumpla con la norma de referencia y disponer 
+                                        de suficientes evidencias de que los procedimientos para la realización de las auditorias internas y la revisión por la dirección, se han implantado y son eficaces.
+                                        Aceptada la oferta y asignado el equipo auditor, se inicia el proceso de evaluación en sí, distribuido en dos fases diferenciadas." />
+          </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+    </h:form>         
+        </div>
+
+        </div>        
+               
+
+            
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+    </f:view>
+</html>

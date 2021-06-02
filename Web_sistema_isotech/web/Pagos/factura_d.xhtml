@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+  
+        
+        
+            <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+          
+             <div class="navbar">
+              
+            
+                
+                 <div class="link ">
+                   <a href="../Pagos/factura_d.xhtml">Registrar Pagos</a>
+                
+                </div>
+                
+
+           </div>
+            
+            
+            <div class="content">
+                    <h:form>
+                    <div class="caratula">
+                    </div>
+                    <FONT SIZE="+2"><p align="right"><i><b>
+                                    <p:commandLink  actionListener="#{sistemasBean.salirSesion()}" value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                       <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+                    </b></i></p></FONT>
+                </h:form>
+                  
+                <h:form>  
+    <p:growl id="messages"/>
+ 
+   
+    
+    
+    </h:form>
+                <h4>
+                   <div class="link">
+                    <p align="center"> 
+                            </p> 
+                  </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+     <br/>
+                  
+                    <br/>
+                    <h:body >
+                            <h:form >
+             <p:growl id="msgs" showDetail="true" />
+                <p:messages>
+        <p:autoUpdate />
+    </p:messages>
+            
+            <p:panelGrid columns="2"  style="margin-bottom: 10px">      
+                
+                <h:outputText value="Fecha de pago:"/>
+                <p:calendar id="event" value="#{sistemasBean.pagos.fechaPago}" mode="popup" showOn="button" pages="2" navigator="true" required="true">
+                        <p:ajax event="dateSelect" listener="#{calendarView.onDateSelect}" update="msgs" />
+                  </p:calendar>
+                
+                
+                <h:outputLabel   value="Escoja el usuario: " />
+                <p:selectOneMenu value="#{sistemasBean.usuario.ciUser}"    filter="true"  filterMatchMode="contains" >      
+                <f:selectItem itemLabel="Select One" itemValue="" />
+                <f:selectItems  value="#{sistemaBean.listaVisitante}" var="usuario" itemLabel="#{usuario.ciVisitante}-#{usuario.nombreVisitante} #{usuario.apellidoVisitante}"  itemValue="#{usuario.ciVisitante}" />
+               </p:selectOneMenu>
+                
+                    
+             <h:outputText  value="Forma de pago: " />
+            <p:selectOneMenu id="pay" value="#{sistemasBean.pagos.tipoPago}" style="with:125px" required="true">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem  itemLabel="Tarjeta" itemValue="tarjeta" />
+            <f:selectItem  itemLabel="Cheque" itemValue="cheque" />
+            <f:selectItem  itemLabel="Transferencia" itemValue="transferencia" />
+        </p:selectOneMenu>
+                
+                
+                
+                <p:commandButton value="Grabar" id="btnGrabar" action="#{sistemasBean.grabar_pago()}"  ajax="false"/>     
+                 
+            
+                </p:panelGrid>        
+             
+             
+             
+               <br/>  
+               
+               <br/>  
+             
+             <table border="0" cellpading="0" cellspacing="0" width="100%" height="100%" style="border:0px solid #000000;">
+             <tbody>
+                 <tr>
+             <td width="48%" valign="top" >
+                          
+                    
+                 <h:outputLabel value="Elija la/s Norma/s que le gustaria adquirir : " rendered="#{sistemasBean.pagos.idUser!=null}" />    
+             
+                 <p:dataTable   value="#{sistemasBean.servicios}"  var="fila" rendered="#{sistemasBean.pagos.idUser!=null}" style="width: auto" >
+  <p:column headerText="Nombre del servicio"  filterMatchMode="contains">
+                    <p:commandLink actionListener="#{sistemasBean.servicios_escogidos(fila)}" ajax="false" > 
+                        <h:outputText value="#{fila.descripcionServicio}" />
+                        </p:commandLink>
+                </p:column>
+                <p:column headerText="Costo"  filterMatchMode="contains">
+                   <h:outputText value="#{fila.costoServicio}"/>
+                </p:column>
+                 
+            </p:dataTable>
+
+         </td>
+           <td width="3%"></td>
+            
+                 
+                 
+            
+                 
+                            
+           <td width="40%" valign="top">
+               
+              
+               
+                   
+                     <p:dataTable  id="productos" value="#{sistemasBean.detalles}"  var="filas"  rendered="#{sistemasBean.pagos.idUser!=null}" >
+                           <f:facet    name="header" >
+              Factura
+            </f:facet>      
+                   <p:column headerText="Nombre del servicio"  filterMatchMode="contains">
+         
+                    <p:outputLabel   value="#{filas.idServicio.descripcionServicio}"/>
+                </p:column>
+                <p:column headerText="Costo"  filterMatchMode="contains">
+                    <p:outputLabel   value="#{filas.idServicio.costoServicio}"/>
+                </p:column>
+                </p:dataTable>
+               
+               <p:panelGrid columns="1" rendered="#{sistemasBean.pagos.idUser!=null}"> 
+                     
+                     <p:column filterMatchMode="contains">
+           <h:outputLabel  value="Subtotal : " /> 
+           <p:outputLabel   value="#{sistemasBean.subtotal}"/>
+           </p:column>
+                     
+            <p:column filterMatchMode="contains">
+           <h:outputLabel  value="Iva : " />
+           <p:outputLabel   value="#{sistemasBean.iva}"/>
+           </p:column>
+                     
+                     
+                     <p:column filterMatchMode="contains">
+           <h:outputLabel  value="Total : " />
+           <p:outputLabel   value="#{sistemasBean.total}"/>
+           </p:column>
+                   <p:column filterMatchMode="contains">
+           <h:outputLabel  value="Descuento : " />
+           <p:outputLabel   value="#{sistemasBean.desc}"/>
+           </p:column>  
+             <p:column filterMatchMode="contains">
+           <h:outputLabel  value="totalDescuento : " />
+           <p:outputLabel   value="#{sistemasBean.totalDesc}"/>
+           </p:column>
+                     
+                     
+           <f:facet name="footer">
+               <p:commandButton  ajax="false" value="Confirmar" action="#{sistemasBean.grabar_totales()}" icon="ui-icon-check" rendered="#{sistemasBean.pagos.idTarjeta!=null or sistemasBean.pagos.idCheque!=null or sistemasBean.pagos.idCuenta!=null}"/> 
+           </f:facet> 
+       </p:panelGrid>
+                 
+                      </td>
+           
+           
+           </tr>
+           </tbody>
+                 </table>
+                   
+                 
+          
+              
+             <div></div>
+               <p:commandButton value="Siguiente" id="btnCliente" action="#{sistemasBean.siguiente_next()}"  ajax="false" rendered="#{sistemasBean.pagos.idUser!=null}"/>  
+ </h:form>
+                </h:body>
+                    
+                    </h4>
+ 
+            
+    </div>   
+            </div>
+ <h:head> 
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://peluqueriacorteingles.blogspot.com"><FONT COLOR="PURPLE">Blog de Prueba</FONT></A>
+</div>
+</body>
+            
+           
+    </h:body>
+        
+    </f:view>
+   
+</html>

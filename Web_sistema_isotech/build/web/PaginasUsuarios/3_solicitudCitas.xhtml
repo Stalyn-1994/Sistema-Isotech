@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                  <a href="../Pagos/Administrador.xhtml">Administrador</a>
+                </div>
+                 <div class="link ">
+                  <a href="../PaginasUsuarios/3_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/3_solicitudCitas.xhtml">Consultar las solicitudes de citas</a>
+                </div>
+             
+                
+                
+                
+           </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                </h:form>
+                
+             
+                
+                 <h:form>
+                     
+                     <FONT COLOR="black"> <h3><p align="left">LISTA DE SOLICITUDES ACTUALES</p></h3> </FONT>
+                <br/>
+                <br/>  
+                <p:dataTable  value="#{agendamientoCitas.listaSolicitudCita}" var="fila" id="datos">
+                    <p:column headerText="Borrar solicitudes" >
+                         <p:commandLink value="Eliminar" action="#{agendamientoCitas.eliminarClientes(fila)}" onclick="if (!confirm('¿SUS DATOS SE ELIMINARAN PERMANENTEMENTE?')) return false;" update="datos"/>
+                        </p:column>
+                        
+                     <p:column headerText="Establecer cita ">
+                         <p:commandLink value="Establecer" action="#{agendamientoCitas.establecerCita(fila)}" />                             
+               </p:column>    
+                    <p:column headerText="cedula del usuario" >
+                         <h:outputText value="#{fila.idUsuario.ciUser} "></h:outputText>
+                         <h:outputText value="#{fila.idVisitante.ciVisitante} "></h:outputText>
+                </p:column>
+                <p:column headerText="Nombres del usuario">
+                    <h:outputText value="#{fila.idUsuario.nombreUser} #{fila.idUsuario.apellidoUser}"></h:outputText>
+                    <h:outputText value="#{fila.idVisitante.nombreVisitante} #{fila.idVisitante.apellidoVisitante}"></h:outputText>
+                </p:column>
+                <p:column headerText="Fecha:">
+                    <p:calendar  value="#{fila.fechaInicio}"  pattern="yyyy/MM/dd HH:mm:ss" disabled="true" />
+                     <p:calendar  value="#{fila.fechaFin}"  pattern="yyyy/MM/dd HH:mm:ss" disabled="true"/>
+                </p:column>
+                     <p:column headerText="Telefono del usuario">
+                         <h:outputText value="#{fila.idUsuario.telefonoUser} "></h:outputText>
+                         <h:outputText value="#{fila.idVisitante.telefonoVisitante} "></h:outputText>
+                </p:column>
+                 
+                     <p:column headerText="Tipo Usuario">
+                         <h:outputText value="#{fila.idUsuario.idTipo.descripcionTipo} "></h:outputText>                       
+                </p:column> 
+                 
+                    
+                    
+            </p:dataTable>
+                
+       
+                
+           
+           
+              <br/>
+              <FONT COLOR="green"> <h3><i><p align="left"> * En la parte Establecer podras configurar la hora de las citas</p></i></h3> </FONT>
+                </h:form>
+        
+            </div>
+            </div>
+        
+<h:head>
+            <p align="center"> <img  src="../recursos/img/TODAS.png"></img> </p> 
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

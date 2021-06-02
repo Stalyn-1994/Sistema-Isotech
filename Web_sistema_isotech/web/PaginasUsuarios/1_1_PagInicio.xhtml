@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+             <div class="navbar">
+                 <div class="link ">
+                  <a href="../PaginasUsuarios/1_1_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_agendamientoCitas_1.xhtml">Agenda una Cita</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_1_documentacion.xhtml">Documentacion</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_1_progreso.xhtml">Consulta tu Progreso</a>
+                </div>
+                
+                <div class="link ">
+                   <a href="../PaginasUsuarios/1_1_Administrar.xhtml">Datos Personales</a>
+                </div>
+                
+           </div>
+            <div class="content">
+                  <br/>
+                    <br/>
+                <h:form>  
+                    <div class="caratula">
+                    </div>
+    <p:growl id="messages"/>
+    
+     <FONT SIZE="+2"><p align="right"><i><b>
+                     
+     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                     
+                     <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+     
+     </b></i></p></FONT>
+                    <br/>
+                    <br/>                
+    
+    
+</h:form>
+                
+                <div class="link">
+                    
+                    <p align="center"> <img class="imgi" src="../recursos/img/ISO2.png"></img> </p> 
+                    
+                  </div>
+                    <p:contentFlow  value="#{sistemaBean.seguridad}" var="image">
+                        <p:graphicImage  name="../recursos/imagen/nature/#{image}"  styleClass="content"/>
+                     
+                    </p:contentFlow>
+                    
+                       <h:form id="form">  
+    <p:growl id="msgs" showDetail="true" />
+  <br/>
+                    <br/> 
+                     <br/>
+                    <br/> 
+   
+    <h3>CONSULTORIA SOBRE SEGURIDAD DE LA INFORMACION</h3>
+    <p:accordionPanel multiple="true">
+        <p:tab title="¿Ques es la ISO 27001?">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="../recursos/imagen/nature/candado1.jpg" />
+                <h:outputText
+                    value="ISO/IEC 27001 es el estándar internacional para la gestión de la seguridad de la información. 
+                    Define cómo poner en práctica un sistema de gestión de seguridad de la información evaluado independientemente
+                    y certificado. Esto le permite asegurar más eficientemente toda la información financiera y confidencial de
+                    manera que reduzca la posibilidad de que se acceda a la misma de manera ilegal o sin autorización.
+                    Con la ISO/IEC 27001 usted puede demostrar compromiso y cumplimiento con la mejor práctica global,
+                    demostrando a los clientes,proveedores e interesados que la seguridad es esencial para la manera en que usted opera." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="¿Porque es la ISO 27001 útil para mi empresa?">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="../recursos/imagen/nature/candado2.jpg" />
+                <h:outputText value="Identifique los riesgos y coloque controles en el sitio para gestionarlos o eliminarlos
+                                        Flexibilidad para adaptar controles a todas las áreas o áreas seleccionadas de su organización
+                                        Gane la confianza de los interesados y de los clientes de que sus datos están protegidos 
+                                        Demuestre cumplimiento y gane estatus como proveedor preferido
+                                        Satisfaga más expectativas de licitaciones al demostrar cumplimiento " />
+           </h:panelGrid>
+        </p:tab>
+        <p:tab title="Proceso de certificacion de la norma ISO 27001 como sello de Seguridad de la Informacion">
+            <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage width="420x431" name="../recursos/imagen/nature/candado3.jpg" />
+                <h:outputText value="Pre-auditoría Este es un servicio de pre-evaluación opcional, el cual revisa de cerca 
+                              su sistema de seguridad de la información existente y lo compara con los requisitos del estándar
+                              ISO/IEC 27001. Esto ayuda a identificar áreas que necesitan más trabajo antes de llevar a cabo 
+                              la auditoría formal, ahorrándole tiempo y dinero.
+                              Auditoría formal
+                                Esta se da en dos etapas. Primero revisamos la preparación de su organización para la 
+                                evaluación, revisando si se han desarrollado los procedimientos y controles ISO/IEC 27001 
+                                necesarios. Compartiremos los detalles de nuestros hallazgos con usted, de manera que si 
+                                encontramos algunas brechas, pueda cerrarlas. Si todos los requisitos están en su lugar, 
+                                entonces evaluaremos la implementación de los procedimientos y controles dentro de su 
+                                organización, para asegurarnos que estén funcionando eficientemente como lo requiere la 
+                                certificación. 
+                                Certificación y más allá 
+                                Cuando haya pasado la auditoría formal, recibirá un certificado ISO/IEC 27001, con una 
+                                validez por tres años. Su auditor permanecerá en contacto durante este tiempo, visitándolo 
+                                con regularidad, para garantizar que su sistema no solamente permanezca en cumplimiento, sino
+                                que mejore continuamente." />
+                
+          </h:panelGrid>
+        </p:tab>
+    </p:accordionPanel>
+    </h:form>         
+        </div>
+
+        </div>        
+               
+
+            
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+    </f:view>
+</html>

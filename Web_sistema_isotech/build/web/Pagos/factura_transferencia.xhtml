@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+  
+        
+        
+            <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+          
+             <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                
+                </div>
+                
+                 <div class="link ">
+                   <a href="../Pagos/factura_d.xhtml">Registrar Pagos</a>
+                
+                </div>
+                
+
+           </div>
+            
+            
+            <div class="content">
+                <h:form>  
+    <p:growl id="messages"/>
+ 
+   
+    
+    
+    </h:form>
+              
+                <h4>
+                   <div class="link">
+                    <p align="center"> 
+                            </p> 
+                  </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+     <br/>
+                  
+                    <br/>
+                    <h:body >
+                       <h:form>
+                 <p:outputLabel value="Tipo de Cuenta"/>
+          <p:selectOneMenu id="CuentaTipo" value="#{sistemasBean.cuenta.tipoCuenta}" style="margin-left: 75px " >
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem  itemLabel="Empresarial" itemValue="1" />
+            <f:selectItem  itemLabel="Personal" itemValue="2" />              
+            <p:ajax update="pnlContainer"/>
+        </p:selectOneMenu>
+                 
+            
+                 
+                 
+                 <h:panelGroup  id="pnlContainer" layout="block" >
+                
+                
+                     <p:panelGrid  id="cheque_panel_v3"  columns="1" rendered="#{sistemasBean.cuenta.tipoCuenta eq '1'}">
+               <f:facet name="header"> 
+                   Registro de depositos
+               </f:facet>
+                
+                <p:row>
+                    <p:column > 
+                          
+                    <p:outputLabel value="Fecha"/>
+                    <p:inputText   value="#{sistemasBean.pagos.fechaPago}" placeholder="MM/DD" disabled="true" style="margin-left: 146px"/>    
+                    </p:column>
+                        </p:row>
+          
+                            <p:row>
+                              <p:column >
+                        <p:outputLabel  value="RUC" />
+                        <p:inputText value="#{sistemasBean.usuario.rucEmpresa}" placeholder="Name"  disabled="true" style="margin-left: 156.8px"/> 
+                    </p:column>
+                       </p:row>
+                         
+                         <p:row>
+                              <p:column >
+                        <p:outputLabel  value="Empresa" />
+                        <p:inputText value="#{sistemasBean.usuario.nombreEmpresa}" placeholder="Name"  disabled="true" style="margin-left: 125.8px"/> 
+                    </p:column>
+                       </p:row>
+                  <p:row>
+                <p:column > 
+              
+                            
+                            
+                            <p:outputLabel value="Nombre del Banco"/>
+                
+                <p:selectOneMenu id="Banco" value="#{sistemasBean.cuenta.nombreBancos}" style="margin-left: 50px " >
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem  itemLabel="Banco Pichincha" itemValue="Banco Pichincha" />
+            <f:selectItem  itemLabel="Banco de Guayaquil" itemValue="Banco de Guayaquil" />  
+            <f:selectItem  itemLabel="Banco Pacifico" itemValue="Banco del Pacifico" />  
+        </p:selectOneMenu>
+                
+                  </p:column>
+                    </p:row>        
+                
+                <p:row>
+                    
+                   <p:column >
+                        <p:outputLabel  value="Monto" />
+                        <p:inputText value="#{sistemasBean.total}" placeholder="$ .00"  disabled="true" style="margin-left: 147px"/> 
+                    </p:column>
+                
+                </p:row>
+                <p:row>
+                  
+                <p:column>
+                    <p:outputLabel value=" No Cuenta" />
+                    <p:inputText  value="#{sistemasBean.cuenta.numeroCuenta}" placeholder="Ref." required="true" style="margin-left: 111px"/>    
+                    </p:column>
+                </p:row>
+                
+               
+                     <p:row>
+                         <p:commandButton value="Hecho" id="btnHecho" action="#{sistemasBean.grabar_cuenta()}" />  
+            or
+            <p:commandButton value="Cancelar" id="btnCancelar" action="#{sistemasBean.init()}" />   
+                   
+                   
+               </p:row>
+     </p:panelGrid>
+                     
+                     
+                     
+                   <p:panelGrid  id="cheque_panel_v5"  columns="1" rendered="#{sistemasBean.cuenta.tipoCuenta eq '2'}">
+               <f:facet name="header"> 
+                   Registro de depositos
+               </f:facet>
+                
+                <p:row>
+                    <p:column > 
+                          
+                    <p:outputLabel value="Fecha"/>
+                    <p:inputText   value="#{sistemasBean.pagos.fechaPago}" placeholder="MM/DD" disabled="true" style="margin-left: 146px"/>    
+                    </p:column>
+                        </p:row>
+             <p:row>
+                              <p:column >
+                        <p:outputLabel  value="DNI" />
+                        <p:inputText value="#{sistemasBean.usuario.ciUser}" placeholder="Name"  disabled="true" style="margin-left: 163.8px"/> 
+                    </p:column>
+                       </p:row>
+                         
+                       <p:row>
+                              <p:column >
+                        <p:outputLabel  value="Cliente" />
+                        <p:inputText value="#{sistemasBean.usuario.nombreUser} #{sistemasBean.usuario.apellidoUser}" placeholder="Name"  disabled="true" style="margin-left: 139.5px"/> 
+                    </p:column>
+                       </p:row>
+                  <p:row>
+                <p:column > 
+              
+                            
+                            
+                            <p:outputLabel value="Nombre del Banco"/>
+                
+                <p:selectOneMenu id="Bancos" value="#{sistemasBean.cuenta.nombreBancos}" style="margin-left: 50px " >
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItem  itemLabel="Banco Pichincha" itemValue="Banco Pichincha" />
+            <f:selectItem  itemLabel="Banco de Guayaquil" itemValue="Banco de Guayaquil" />  
+            <f:selectItem  itemLabel="Banco Pacifico" itemValue="Banco del Pacifico" />  
+        </p:selectOneMenu>
+                
+                  </p:column>
+                    </p:row>        
+                
+                <p:row>
+                    
+                   <p:column >
+                        <p:outputLabel  value="Monto" />
+                        <p:inputText value="#{sistemasBean.total}" placeholder="$ .00"  disabled="true" style="margin-left: 147px"/> 
+                    </p:column>
+                
+                </p:row>
+                <p:row>
+               <p:column>
+                    <p:outputLabel value=" No Cuenta" />
+                    <p:inputText  value="#{sistemasBean.cuenta.numeroCuenta}" placeholder="Ref." required="true" style="margin-left: 111px"/>    
+                    </p:column>
+                </p:row>
+                
+               
+                     <p:row>
+                         <p:commandButton value="Hecho" id="btnHechos" action="#{sistemasBean.grabar_cuenta()}" />  
+            or
+            <p:commandButton value="Cancelar" id="btnCancel" action="#{sistemasBean.init()}" />   
+                   
+                   
+               </p:row>
+     </p:panelGrid>
+                             
+                     
+                     
+                     
+                     
+                     
+                     
+            </h:panelGroup>         
+        </h:form>
+                </h:body>
+                    
+                    </h4>
+ 
+            
+    </div>   
+            </div>
+ <h:head> 
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://peluqueriacorteingles.blogspot.com"><FONT COLOR="PURPLE">Blog de Prueba</FONT></A>
+</div>
+</body>
+            
+           
+    </h:body>
+        
+    </f:view>
+   
+</html>

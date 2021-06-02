@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                </div>
+                
+            </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                </h:form>
+                
+                <div class="link">
+                 
+                    
+                    
+                    
+                  </div>
+                <br/>
+                <br/>
+                <h:form>
+                <FONT COLOR="orange"> <h1>INICIAR SESION</h1> </FONT>
+                <br/>
+                <br/>
+                
+                </h:form>
+                
+                <h:form id="frmRep">
+            <h2>¿Que Tipo de Usuario Eres?</h2>
+            <p:panelGrid columns="3">
+
+                <h:outputText value="Elija el Tipo de Usuario: "></h:outputText>
+                
+                <p:selectOneMenu value="#{sistemaBean.tipoUser.idTipo}">
+                    
+                    <f:selectItems value="#{sistemaBean.listaTipoUser}"
+                                   var="f"
+                                   itemLabel="#{f.nombreTipo}"
+                                   itemValue="#{f.idTipo}">
+                    </f:selectItems>
+                    
+                    
+                </p:selectOneMenu>
+                
+                <p:commandButton value="Recuperar" 
+                                 action="#{sistemaBean.loginUsuarios()}"
+                                 update="frmRep"></p:commandButton>
+            </p:panelGrid>
+
+            <br/>
+             
+            
+            
+            <br/>
+            
+            
+           
+            
+           
+        </h:form>
+             
+            </div>
+            </div>
+        
+
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

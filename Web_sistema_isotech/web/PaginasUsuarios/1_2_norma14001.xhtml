@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        
+        <div class="main">
+            
+            <div class="navbar">
+                 <div class="link ">
+                  <a href="../PaginasUsuarios/1_2_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_agendamientoCitas.xhtml">Agenda una Cita</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_2_documentacion.xhtml">Documentacion</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_2_progreso.xhtml">Consulta tu Progreso</a>
+                </div>
+                
+                <div class="link ">
+                   <a href="../PaginasUsuarios/1_2_Administrar.xhtml">Datos Personales</a>
+                </div>
+                
+           </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                    <FONT SIZE="+2"><p align="right"><i><b>
+                     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                       <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+                    </b></i></p></FONT>
+                </h:form>
+                
+                <div class="link">
+               
+                  </div>
+                <br/>
+                <br/>
+                <style type="text/css">
+    .ui-scrollpanel p {
+        width: 950px;
+        font-size: 22px;
+    }
+</style>
+           <h2>Introduccion a la Norma 14001</h2>
+<p:scrollPanel mode="native" style="width:950px;height:500px">
+    <p><b>
+     Objeto y campo de aplicación
+      </b>
+    </p>
+    <p>
+        
+Esta Norma Internacional especifica los requisitos para un sistema de gestión ambiental, destinados a permitir que
+una organización desarrolle e implemente una política y unos objetivos que tengan en cuenta los requisitos legales y
+otros requisitos que la organización suscriba, y la información relativa a los aspectos ambientales significativos. Se
+aplica a aquellos aspectos ambientales que la organización identifica que puede controlar y aquellos sobre los que la
+organización puede tener influencia. No establece por sí misma criterios de desempeño ambiental específicos.
+    </p>
+    <p>
+      Esta Norma Internacional se aplica a cualquier organización que desee:
+       
+    </p>
+    <p>
+      a) establecer, implementar, mantener y mejorar un sistema de gestión ambiental;
+        
+    </p>
+    <p>
+       b) asegurarse de su conformidad con su política ambiental establecida;
+    </p>
+    <p>
+      c) demostrar la conformidad con esta Norma Internacional por:
+    </p>
+    <br/>
+    <p><b>
+1) la realización de una autoevaluación y autodeclaración, o
+      </b>
+    </p>
+    <p>
+        
+2) la búsqueda de confirmación de dicha conformidad por las partes interesadas en la organización, tales
+como clientes; o
+    </p>
+    <p>
+      3) la búsqueda de confirmación de su autodeclaración por una parte externa a la organización; o
+       
+    </p>
+    <p>
+     4) la búsqueda de la certificación/registro de su sistema de gestión ambiental por una parte externa a la
+organización.
+    </p>
+    <p><b>
+Todos los requisitos de esta Norma Internacional tienen como fin su incorporación a cualquier sistema de gestión
+ambiental. Su grado de aplicación depende de factores tales como la política ambiental de la organización, la
+naturaleza de sus actividades, productos y servicios y la localización donde y las condiciones en las cuales opera.
+Esta Norma Internacional también proporciona, en el anexo A, orientación de carácter informativo sobre su uso.
+      </b>
+    </p>
+    
+    <p>
+       2 Normas para consulta
+    </p>
+    <p>
+       
+       No se citan referencias normativas. Este apartado se incluye con el propósito de mantener el mismo orden
+numérico de los apartados de la edición anterior (ISO 14001:1996).
+    </p>
+     <p>
+        3 Términos y definiciones
+    </p>
+     <p>
+     Para el propósito de esta norma internacional se aplican las siguientes definiciones.
+     3.1
+auditor
+persona con competencia para llevar a cabo una auditoría
+
+3.2
+mejora continua
+proceso recurrente de optimización del sistema de gestión ambiental (3.8) para lograr mejoras en el desempeño
+ambiental global (3.10) de forma coherente con la política ambiental (3.11) de la organización (3.16)
+       
+    </p>
+  
+</p:scrollPanel>
+              <script type="text/javascript">
+                        //<![CDATA[
+                    function start() {
+                        PF('statusDialog').show();
+                    }
+
+                    function stop() {
+                        PF('statusDialog').hide();
+                    }
+                        //]]>
+                    </script>    
+
+
+                    <p:dialog modal="true" widgetVar="statusDialog" header="Descargando" draggable="false" closable="false" resizable="false">
+                        <img src="../recursos/img/loading15.gif" />
+                    </p:dialog>             
+
+
+                   
+                           
+                    <h:form>   
+                <FONT SIZE="+2"><p align="center"><p:commandButton value="Descargar Norma 27001" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="pi pi-arrow-down">
+                            <p:fileDownload value="#{sistemaBean.file6}" />
+                       </p:commandButton>     </p> </FONT>
+</h:form>
+                     
+            </div>
+            </div>
+        
+        
+<h:head>
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

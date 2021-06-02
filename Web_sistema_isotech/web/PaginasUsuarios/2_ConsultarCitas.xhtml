@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        
+        <div class="main">
+          <div class="navbar">
+                 <div class="link ">
+                  <a href="../PaginasUsuarios/2_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+               
+                
+               <div class="link ">
+                  <a href="../PaginasUsuarios/2_Consultorias.xhtml">Consultorias</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/2_ConsultarCitas.xhtml">Consultar Citas</a>
+                </div>
+              
+                <div class="link ">
+                   <a href="../PaginasUsuarios/2_Administrar.xhtml">Datos Personales</a>
+                </div>
+                
+           </div>
+            <div class="content">
+                    
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                    <FONT SIZE="+2"><p align="right"><i><b>
+                     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false" style="margin-right:200px;"/>
+                       <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+                    </b></i></p></FONT>
+                </h:form>
+                
+                <div class="link">
+               
+                  </div>
+                <br/>
+                
+                <h:form>
+                    
+                  <p:menubar>
+                       
+        <p:submenu label="LISTA DE CITAS " icon="pi pi-file">
+            <p:menuitem value="CONSULTAR CITAS USUARIOS" outcome="../PaginasUsuarios/2_ConsultarCitas.xhtml" />
+            <p:separator />                     
+        </p:submenu>
+         <p:submenu label="LISTA DE CITAS VISITANTE" icon="pi pi-file">
+            <p:menuitem value="CONSULTAR" outcome="../PaginasUsuarios/2_ConsultarCitas_V.xhtml" />
+            <p:separator />                     
+        </p:submenu>
+        
+      
+       
+ 
+     
+ 
+        
+       
+    </p:menubar>
+                 
+   
+</h:form>
+             
+                <br/>
+           
+                
+                 <h:form>
+                     
+                     <FONT COLOR="black"> <h3><p align="left">LISTA DE CLIENTES</p></h3> </FONT>
+                <br/>
+                <br/>  
+                <p:dataTable  value="#{sistemaBean.listaCitas}" editable="true" var="fila" id="datos">
+
+          <p:column headerText="Nombres:" >
+                         <h:outputText value="#{fila.idUser.nombreUser} #{fila.idUser.apellidoUser} "></h:outputText>
+                       
+                </p:column>
+                    
+                <p:column headerText="Estado de la cita ">
+                   
+                 
+                        <h:outputText value="#{fila.idEstado.descripcionEstado}" ></h:outputText>
+                     
+                 
+                     
+                 
+                </p:column>
+                   
+                    
+                <p:column filterBy="#{fila.idUser.telefonoUser}" headerText="Telefono del Usuario">
+                    <h:outputText  value="#{fila.idUser.telefonoUser}"></h:outputText>
+                </p:column>
+                    
+                    
+                     <p:column filterBy="#{fila.idUser.correoUser}" headerText="Correo del usuario">
+                         <h:outputText value="#{fila.idUser.correoUser}"></h:outputText>
+                         
+                </p:column>
+                   
+                                      
+                      <p:column headerText="Fecha:">
+                           <p:calendar  value="#{fila.fechaCitas}"  pattern="yyyy/MM/dd" disabled="true"/>
+                          
+                </p:column>
+               
+                                      
+                      <p:column headerText="Opciones:">
+                          <p:commandButton  action="#{sistemaBean.actualizar_Docc2(fila)}"  ajax="false" value="Actualizar"  />
+                          
+                </p:column>
+              
+                  
+                    
+            </p:dataTable>
+                
+                
+                
+           
+           
+            
+                </h:form>
+               
+            </div>
+            </div>
+        
+
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+  
+        
+        
+            <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+          
+             <div class="navbar">
+              
+                
+                 <div class="link ">
+                   <a href="../Pagos/factura_d.xhtml">Registrar Pagos</a>
+                
+                </div>
+                
+
+           </div>
+            
+            
+            <div class="content">
+                <h:form>  
+    <p:growl id="messages"/>
+ 
+   
+    
+    
+    </h:form>
+               
+                <h4>
+                   <div class="link">
+                    <p align="center"> 
+                            </p> 
+                  </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+     <br/>
+                  
+                    <br/>
+                    <h:body >
+                    <h:form>
+            
+            
+                
+            <h:panelGrid columns="1" style="margin-bottom:10px"  >
+                <p:column>
+                    <p:graphicImage value="../recursos/imagen/diners.jpg" width="123.69" height="45" style="margin-right: 24px"/> 
+                       <p:graphicImage value="../recursos/imagen/visa.jpg" width="87.69" height="45" style="margin-right: 24px"/> 
+                       <p:graphicImage value="../recursos/imagen/mastercard.jpg" width="93.69" height="45" /> 
+                </p:column>
+                <div></div>
+                
+                <p:selectOneRadio id="customRadio"   value="#{sistemasBean.tarjeta.decripcionTarjeta}" unselectable="true"  required="true" style="margin-bottom: 3em" >                
+           
+            <f:selectItem itemLabel="Diners Club"  itemValue="Diners Club"  />             
+           <f:selectItem itemLabel="Visa" itemValue="Visa"  />              
+            <f:selectItem itemLabel="Mastercard" itemValue="Mastercard" /> 
+        </p:selectOneRadio>
+                <br></br>
+          
+                <p:outputLabel  value="Numero de  tarjeta"/>
+                <p:inputText  value="#{sistemasBean.tarjeta.coodigoTarjeta}" placeholder="1234 5678 9012 3456" maxlength="16" required="true" /> 
+                    <p style="color: crimson" class="error">Valida que el número se encuentre correcto y que la franquicia esté habilitada </p>
+                    <br/>
+                    <br/>
+                <p:outputLabel value="Fecha Vencimiento"/>
+                <p:inputText value="#{sistemasBean.tarjeta.fechaVencer}" placeholder="MM/YY" maxlength="5" required="true"/> 
+                    <p style="color: crimson" class="error" >
+                        La fecha de expiración es de la forma MM/YY y debe estar vigente                         
+                    </p>
+                    <br/>
+                    <br/>
+                                      
+                    <p:outputLabel value="Codigo seguridad"/>
+                    <p:inputText  value="#{sistemasBean.tarjeta.codigoSeguridad}" placeholder="CVV"/>    
+                    <br/>
+                    <br/>
+                    <p:commandButton value="Consultar" id="btnConsultar" action="#{sistemasBean.consultar_tarjeta_directa()}" ajax="false" />  
+                    
+                   
+         </h:panelGrid>
+          
+            
+            
+        </h:form>
+                </h:body>
+                    
+                    </h4>
+                
+ 
+            
+    </div>   
+            </div>
+ <h:head> 
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://peluqueriacorteingles.blogspot.com"><FONT COLOR="PURPLE">Blog de Prueba</FONT></A>
+</div>
+</body>
+            
+           
+    </h:body>
+        
+    </f:view>
+   
+</html>

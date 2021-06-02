@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_PagInicio.xhtml">Pagina Principal</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_agendamientoCitas_3.xhtml">Agenda una Cita</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_documentacion.xhtml">Documentacion</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_progreso.xhtml">Consulta tu Progreso</a>
+                </div>
+                
+                <div class="link ">
+                   <a href="../PaginasUsuarios/1_Administrar.xhtml">Datos Personales</a>
+                </div>
+                
+           </div>
+            <div class="content">
+                  <br/>
+                    <br/>
+                <h:form>  
+                    <div class="caratula">
+                    </div>
+    <p:growl id="messages"/>
+     <FONT SIZE="+2"><p align="right"><i><b>
+                     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                       <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+
+                    <h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                       </h:form>
+                    </b></i></p></FONT>
+    <br/>
+                    <br/>
+   
+</h:form>
+                
+                <div class="link">
+                    
+                   
+                     <h:form>
+                <FONT COLOR="orange"> <h1><p align="center">¿Porqué utilizar una checklist para obtener la certificación ISO 9001?</p></h1> </FONT>
+                <br/>
+            <h:form>   
+                <FONT SIZE="+2"><p align="center"><p:commandButton value="Descargar" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="pi pi-arrow-down">
+                           <p:fileDownload value="#{sistemaBean.file1}" />
+                       </p:commandButton>     </p> </FONT>
+</h:form>
+                <br/>
+                <h4>Una checklist es eficaz cuando está de acuerdo con la realidad de la organización y que no deja fuera 
+                    ningún requisito contenido en el Sistema de Gestión de Calidad ni en los requisitos de ISO 9001. 
+                    Por ello, el desarrollo de la lista de verificación debe ser cuidadoso. Una buena checklist es un 
+                    importante soporte activo durante el proceso de auditoría.
+                </h4>
+                <br/>
+                <FONT COLOR="GREEN"> <h1>Facilitar la planificación y la ejecución de la auditoría</h1> </FONT>
+                 <br/>
+                <h4>Siempre será alto el número de ítems a verificar en cada área de la organización. 
+                    Cada una de ellas debe cumplir requisitos diferentes para la ejecución de sus funciones
+                    y la evaluación de su desempeño. Confeccionar listas de verificación específicas ayudará a 
+                    tener una visión amplia del engranaje del sistema, y de la manera cómo los distintos procesos 
+                    se relacionan entre sí.
+                </h4>
+                 <br/>
+                <FONT COLOR="GREEN"> <h1>Prevenir fallas humanas</h1> </FONT>
+                <h4>Las checklist permiten que los empleados estén mejor preparados para percibir problemas de calidad. 
+                    Las fallas de memoria o de atención de los seres humanos son factores decisivos para hacer que un proceso vaya mal. 
+                    Sin embargo, cuando nos acostumbramos a utilizar listas de verificación, ese tipo de errores tienden a disminuir.
+                    La posibilidad de olvidar u omitir detalles desciende en forma considerable.
+                </h4>
+                <br/>
+                <FONT COLOR="GREEN"> <h1>Servir como plan de muestreo</h1> </FONT>
+                <h4>Una checklist completada y archivada es el material ideal para alimentar un sistema estadístico que 
+                    ofrezca información relevante para fundamentar la toma de decisiones. 
+                    En este punto, la inversión en capacitación y formación, para analizar la información y establecer
+                    tendencias puede ser muy rentable.
+                </h4>
+                <br/>
+                <FONT COLOR="GREEN"> <h1>Indicar que se siguen los nuevos procedimientos</h1> </FONT>
+                <h4>La adopción de herramientas eficaces de gestión de la calidad no es una tarea fácil. 
+                    Una de las principales dificultades es inculcar una cultura organizacional proclive a los cambios.
+                    Muchos empleados no pueden entender los beneficios de los nuevos procedimientos.La checklist, por lo tanto,
+                    sirve para verificar que todos los empleados están atentos y siguiendo las directrices. 
+                    El trabajo de concienciación en cuanto a la importancia de obtener la certificación ISO 9001 es arduo,
+                    pero los resultados son satisfactorios.
+                </h4>
+                <br/>
+                <FONT COLOR="GREEN"> <h1>Proporcionar información para futuras auditorías</h1> </FONT>
+                <h4>Los datos de la auditoría de certificación ISO 9001 serán la base de comparación para futuras
+                    auditorías internas y facilitarán
+                    el seguimiento de la evolución de los resultados y su sostenibilidad en el tiempo. 
+                    Sin duda, esto ayudará a promover el ciclo de mejora continua.Si quiere profundizar acerca de este tema,
+                    en Escuela Europea de Excelencia ya tratamos este tema en una de nuestras Master Class.
+                    Puede acceder de forma gratuita al vídeo en el siguiente enlace: Acceso al vídeo de la Master Class 
+                    Checklist: Lista de verificación de ISO 9001 2015.
+                </h4>
+                <br/>           
+                  <script type="text/javascript">
+                        //<![CDATA[
+                    function start() {
+                        PF('statusDialog').show();
+                    }
+
+                    function stop() {
+                        PF('statusDialog').hide();
+                    }
+                        //]]>
+                    </script>    
+
+
+                    <p:dialog modal="true" widgetVar="statusDialog" header="Descargando" draggable="false" closable="false" resizable="false">
+                        <img src="../recursos/img/loading15.gif" />
+                    </p:dialog>             
+
+
+                   
+                                </h:form>
+                    <h:form>   
+                <FONT SIZE="+2"><p align="center"><p:commandButton value="Descargar" ajax="false" onclick="PrimeFaces.monitorDownload(start, stop);" icon="pi pi-arrow-down">
+                           <p:fileDownload value="#{sistemaBean.file1}" />
+                       </p:commandButton>     </p> </FONT>
+</h:form>
+                  </div>
+        </div>
+           
+        </div>        
+        
+      
+<h:head>
+            
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+    </f:view>
+</html>

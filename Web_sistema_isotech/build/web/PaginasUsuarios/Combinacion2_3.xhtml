@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        
+        <div class="main">
+            <div class="navbar">
+               <div class="link ">
+                  <a href="../PaginasUsuarios/1_PagInicio.xhtml">ISO 900l</a>
+                </div>
+                <div class="link ">
+                  <a href="../PaginasUsuarios/1_1_PagInicio.xhtml">ISO 27001</a>
+                </div>
+           
+                
+           </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                    <FONT SIZE="+2"><p align="right"><i><b>
+                     <p:commandLink  value="Cerrar Sesion" action="../PaginaInicial/index.xhtml" ajax="false"/>
+                       <style type="text/css">
+                        .ui-analog-clock {
+                            width: 200px;
+                        }
+                    </style>  
+<h:form>
+                        <FONT SIZE="+2"><p align="left"><p:clock  /></p></FONT>
+                     </h:form>
+                    </b></i></p></FONT>
+                </h:form>
+                
+                <div class="link">
+               
+                  </div>
+                <br/>
+                <br/>
+           
+                
+                 <h:form>
+                     
+                     <FONT COLOR="black"> <h3><p align="left">DATOS DEL CLIENTE</p></h3> </FONT>
+                <br/>
+                <br/>  
+              
+              
+               <p:panelGrid columns="2">
+                    <h:outputText value="RUC Empresa:"/>
+                    <p:inputText value="#{sistemaBean.usuario.nombreUser}" disabled="true"/>
+                    <h:outputText value="Nombre Empresa:"/>
+                     <p:inputText value="#{sistemaBean.usuario.nombreEmpresa}" disabled="true"/>
+                    <h:outputText value="Correo Empresa:"/>
+                    <p:inputText value="#{sistemaBean.usuario.correoEmpresa}" disabled="true"/>
+                    <h:outputText value="Telefono Empresa:"/>
+                    <p:inputText value="#{sistemaBean.usuario.telefonoEmpresa}" disabled="true"/>
+                   
+                           <h:outputText value="Dni Cédula:"/>
+                           <p:inputText value="#{sistemaBean.usuario.ciUser}" disabled="true"/>
+                     <h:outputText value="Nombre:"/>
+                    <p:inputText value="#{sistemaBean.usuario.nombreUser}" disabled="true"/>
+                    <h:outputText value="Apellido:"/>
+                    <p:inputText value="#{sistemaBean.usuario.apellidoUser}" disabled="true"/>
+                    <h:outputText value="Correo:"/>
+                    <p:inputText value="#{sistemaBean.usuario.correoUser}" disabled="true"/>
+                    <h:outputText value="Telefono:"/>
+                    <p:inputText value="#{sistemaBean.usuario.telefonoUser}" disabled="true"/>
+                    <h:outputText value="Usuario:"/>
+                           <p:inputText value="#{sistemaBean.usuario.usuarioUser}" disabled="true"/>
+                           
+                    <h:outputText value="Contraseña:"/>
+                    <p:inputText value="#{sistemaBean.usuario.contraseniaUser}" disabled="true"/>
+                </p:panelGrid>
+                <br/>
+                <FONT COLOR="green"> <h3><i><p align="left"> * En la parte OPCIONES podras Editar tus datos de Cuenta</p></i></h3> </FONT>
+                </h:form>
+               
+            </div>
+            </div>
+        
+        
+<h:head>
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

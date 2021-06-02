@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+        
+      
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+        
+       
+        
+
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                </div>
+                
+            </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                </h:form>
+                
+                <div class="link">
+                 
+                    
+                    
+                  </div>
+                <br/>
+                <br/>
+                <h:form>
+                <FONT COLOR="orange"> <h1>AGENDAMIENTO</h1> </FONT>
+                <br/>
+                <br/>           
+                 
+                </h:form>
+                 
+                 <script type="text/javascript">
+     PrimeFaces.locales['es'] = {
+                closeText: 'Cerrar',
+                prevText: 'Anterior',
+                nextText: 'Siguiente',
+                monthNames: ['Enero','Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                dayNamesShort: ['Dom','Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                dayNamesMin: ['D','L','M','M','J','V','S'],
+                weekHeader: 'Semana',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: '',
+                timeOnlyTitle: 'Sólo hora',
+                timeText: 'Tiempo',
+                hourText: 'Hora',
+                minuteText: 'Minuto',
+                secondText: 'Segundo',
+                currentText: 'Fecha actual',
+                ampm: false,
+                month: 'Mes',
+                week: 'Semana',
+                day: 'Día',
+                allDayText : 'Todo el día'
+        };
+</script>
+<style type="text/css">
+    .value {
+        width: 500px;
+    }
+</style>
+ 
+
+<h:form>
+        
+       
+   <p:growl id="message" showDetail="true" />
+  <p:panel id="panel" header="INGRESE LA FECHA :" style="margin-bottom:10px;">
+
+      
+    <h:panelGrid columnClasses="value">
+        <h3 style="margin-top: 0">Haga Click en un espacio vacio del Calendario</h3>
+        
+        <p:schedule id="schedule" value="#{agendamientoCitas.eventModel}" widgetVar="myschedule" timeZone="GMT+2" locale="es">
+ 
+            <p:ajax event="dateSelect" listener="#{agendamientoCitas.onDateSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+            <p:ajax event="eventSelect" listener="#{agendamientoCitas.onEventSelect}" update="eventDetails" oncomplete="PF('eventDialog').show();" />
+            <p:ajax event="eventMove" listener="#{agendamientoCitas.onEventMove}" update="message" />
+            <p:ajax event="eventResize" listener="#{agendamientoCitas.onEventResize}" update="message" />
+ 
+        </p:schedule>
+ <p:messages showDetail="true" >
+        <p:autoUpdate />
+    </p:messages>
+        <p:panelGrid columns="3">
+             
+           
+                
+              
+                <h:outputText value="Elija el Numero de Cedula: "></h:outputText>
+                <p:inputText id="titl" value="#{sistemaBean.civ}" required="true" />
+                
+                
+            </p:panelGrid>
+    </h:panelGrid>
+     
+    <p:dialog widgetVar="eventDialog" header="SU SOLICITUD SERA PROCESADA,EN LOS PROXIMOS DIAS NOS COMUNICAREMOS CON USTED" showEffect="clip" hideEffect="clip">
+        <h:panelGrid id="eventDetails" columns="2">
+            <p:outputLabel for="title" value="Titulos:" />
+            <p:inputText id="title" value="#{sistemaBean.solicitudCita.descripcion}" required="true" />
+ 
+            <p:outputLabel for="from" value="Desde: *" />
+            <p:calendar id="from" value="#{sistemaBean.solicitudCita.fechaInicio}" required="true" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+ 
+            <p:outputLabel for="to" value="Hasta: *" />
+            <p:calendar id="to" value="#{sistemaBean.solicitudCita.fechaFin}"  required="true" timeZone="GMT+2" pattern="dd/MM/yyyy HH:mm"/>
+ 
+            
+            <p:commandButton type="reset" value="Resetear" />
+            <p:commandButton id="addButton" value="Guardar" ajax="false"  action="#{sistemaBean.grabarSolicitudXVisitante()}" oncomplete="PF('myschedule').update();PF('eventDialog').hide();" />
+           
+        </h:panelGrid>
+      
+    </p:dialog>  
+       </p:panel>
+</h:form>
+                
+            </div>
+            </div>
+        
+        
+        
+        
+        
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+        
+    </f:view>
+</html>

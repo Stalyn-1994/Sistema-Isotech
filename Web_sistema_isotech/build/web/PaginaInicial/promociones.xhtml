@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+                
+               
+        <title>PROYECTO ISOTECH</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                </div>
+                
+                
+            </div>
+            <div class="content">
+                <h:form>
+                    <div class="caratula">
+                    </div>
+                </h:form>
+                
+                <div class="link">
+                   
+                  <h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+        <p:submenu label="ISO 9001" icon="pi pi-file">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso9001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/pagos.xhtml" />
+            <p:separator />
+           <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="ISO 14001" icon="pi pi-pencil">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso14001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/pagos.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+       
+ 
+        <p:submenu label="ISO 18001" icon="pi pi-question">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso18001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/pagos.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="ISO 27001" icon="pi pi-cog">
+             <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso27001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/pagos.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <f:facet name="options">
+            
+            <p:commandButton value ="INICIAR SESION" id="btnRegresar2" action="../PaginaInicial/loginTipoUsuarios.xhtml" style="margin-left:450px"  ajax="false"  />
+        </f:facet>
+    </p:menubar>
+</h:form>
+                    
+                  </div>
+                  <br/>
+                    <br/>
+               
+             
+ <p align="center">
+<p:outputPanel  id="containmentPanel" layout="block" style="width:1000px;height:300px;border:5px solid greenyellow;">
+   
+    <p:panel id="containment" header="PROMOCIONE # 1" style="margin:0">
+      
+        <h3><b>  9001 + 27001 </b></h3>
+    </p:panel>
+    <h:form>
+                   <p:commandButton value ="ACCEDER A LA PROMOCION" id="btnRegresar2"  style="margin-left:380px"  ajax="false"  />
+            
+            
+        </h:form>  
+    <p:resizable for="containment" containment="true"/>
+    
+</p:outputPanel>
+    
+      </p>           
+                   
+                
+            
+                <br/>
+                <p:outputPanel id="containmentPane" layout="block" style="width:1000px;height:300px;border:5px solid red;">
+    <p:panel id="containmen" header="PROMOCION # 2" style="margin:0">
+        <h3><b> 9001 + 27001 + 14001</b></h3>
+    </p:panel>
+                     <h:form>
+                   <p:commandButton value ="ACCEDER A LA PROMOCION" id="btnRegresar2"  style="margin-left:380px"  ajax="false"  />
+            
+            
+        </h:form>  
+    <p:resizable for="containmen" containment="true"/>
+</p:outputPanel>
+                 <br/>
+                <p:outputPanel id="containmentPan" layout="block" style="width:1000px;height:300px;border:5px solid blueviolet;">
+    <p:panel id="containme" header="PROMOCION # 3" style="margin:0">
+    <h3> <b>   9001 + 45001</b></h3>
+    </p:panel>
+                     <h:form>
+                   <p:commandButton value ="ACCEDER A LA PROMOCION" id="btnRegresar2"  style="margin-left:380px"  ajax="false"  />
+            
+            
+        </h:form>  
+    <p:resizable for="containme" containment="true"/>
+</p:outputPanel>
+            </div>
+            </div>
+        
+<h:head>
+           
+<style>
+.cities {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+<body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://isotechucentral.blogspot.com"><FONT COLOR="ORANGE">Blog de Prueba</FONT></A>
+</div>
+</body>
+    </h:body>
+        
+    </f:view>
+</html>

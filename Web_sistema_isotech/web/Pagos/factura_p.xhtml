@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html" encoding="UTF-8">
+    <h:head>
+        <title>Materias</title>
+        <link href="../recursos/css/estilos.css" rel="stylesheet" type="text/css"/>
+    </h:head>
+    <h:body>
+        <div class="main">
+            <div class="navbar">
+                <div class="link ">
+                   <a href="../PaginaInicial/index.xhtml">Inicio</a>
+                </div>
+                
+            <div class="link">
+                   <a href="../PaginaInicial/normasIso.xhtml">Normas Iso</a>
+            </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/formularioDatos.xhtml">Contactanos</a>
+                </div>
+                <div class="link ">
+                   <a href="../PaginaInicial/aboutUs.xhtml">Acerca de Nosotros</a>
+                
+                </div>
+                
+           </div>
+            <div class="content">
+                <h:form>  
+    <p:growl id="messages"/>
+ 
+<p:menubar>
+        <p:submenu label="ISO 9001" icon="pi pi-file">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso9001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/factura_p.xhtml" />
+            <p:separator />
+           <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="ISO 14001" icon="pi pi-pencil">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso14001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/factura_p.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+       
+ 
+        <p:submenu label="ISO 18001" icon="pi pi-question">
+            <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso18001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/factura_p.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <p:submenu label="ISO 27001" icon="pi pi-cog">
+             <p:submenu label="Informacion" icon="pi pi-briefcase">
+                <p:menuitem value="Sobre la Norma" outcome="../PaginaInicial/iso27001.xhtml" />
+            </p:submenu>
+            <p:menuitem value="Adquirir consultoria" outcome="../Pagos/factura_p.xhtml" />
+            <p:separator />
+            <p:menuitem value="Paquetes Promocion" outcome="../PaginaInicial/promociones.xhtml" />
+        </p:submenu>
+ 
+        <f:facet name="options">
+            
+            <p:commandButton value ="INICIAR SESION" id="btnRegresar2" action="../PaginaInicial/loginTipoUsuarios.xhtml" style="margin-left:450px"  ajax="false"  />
+        </f:facet>
+    </p:menubar>
+    </h:form>
+                <h4>
+                   <div class="link">
+                    <p align="center"> 
+                            </p> 
+                  </div>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+     <br/>
+                  
+                    <br/>
+                    <h:body >
+                    <h:form>
+                        
+                        <table border="0" cellpading="0" cellspacing="0" width="100%" height="100%" style="border:0px solid #000000;">
+                            <tbody>
+                                <tr>
+                                    <td width="48%" valign="top">
+                             <p:panelGrid id="registro" columns="2">  
+                                     <f:facet    name="header" >
+              Registro de usuario
+            </f:facet>
+                       
+                    <h:outputText value="RUC Empresa:"/>
+                    <p:inputText value="#{sistemasBean.usuario.rucEmpresa}" required="true"/>                    
+                    <h:outputText value="Nombre de la empresa:"/>
+                    <p:inputText value="#{sistemasBean.usuario.nombreEmpresa}" required="true"/>                    
+                    <h:outputText value="Telefono empresa:"/>
+                    <p:inputText value="#{sistemasBean.usuario.telefonoEmpresa}" required="true" />                    
+                    <h:outputText value="Correo de la empresa:"/>
+                    <p:inputText value="#{sistemasBean.usuario.correoEmpresa}" placeholder="@email.com" required="true" />                    
+                 
+                    <p:outputLabel for="car" value="Ubicación: " />
+                       <p:selectOneMenu id="car" value="#{sistemasBean.usuario.ubicacion}">
+            <f:selectItem itemLabel="Select One" itemValue="" />
+            <f:selectItems value="#{selectOneMenuView.cars}" />
+        </p:selectOneMenu>   
+                    
+ 
+       
+                    
+                    <h:outputText value="Dni usuario:"/>
+                    <p:inputText value="#{sistemasBean.usuario.ciUser}"  required="true"/>                    
+                    <h:outputText value="Nombre usuario:"/>
+                    <p:inputText value="#{sistemasBean.usuario.nombreUser}" required="true" />                    
+                    <h:outputText value="Apellido usuario:"/>
+                    <p:inputText value="#{sistemasBean.usuario.apellidoUser}"  required="true"/>                    
+                    <h:outputText value="Correo usuario:"/>
+                    <p:inputText value="#{sistemasBean.usuario.correoUser}" placeholder="@email.com" required="true" />                
+                    <h:outputText value="Telefono usuario:"/>
+                    <p:inputText value="#{sistemasBean.usuario.telefonoUser}"  required="true" /> 
+                
+                         </p:panelGrid>
+                        
+<br/>
+                    <br/>
+                    
+                    
+                         <p:growl id="msgs"/>
+                        
+                         <h:outputLink   value="../Pagos/condiciones.xhtml"  target="_blank">Acepta terminos y condiciones</h:outputLink>
+                         <p:selectBooleanButton id="value2" value="#{sistemasBean.value2}" onLabel="Yes" offLabel="No" onIcon="ui-icon-check" offIcon="ui-icon-close" style="width:70px">
+                             <p:ajax update="msgs" listener="#{sistemasBean.addMessage}" />
+     </p:selectBooleanButton>
+ <div/>
+<br/>
+                    <br/>
+                             
+                    <p:commandButton value="Adquirir mi Norma" id="btnCliente" action="#{sistemasBean.continuar()}" ajax="false"  /> 
+      <p:spotlight target="registro" widgetVar="spot" />
+
+                    </td>
+                                    
+                                     <td width="4%"></td>
+            
+                 
+                 
+            
+                 
+                            
+                                     <td width="46%" valign="top">
+                                         
+                               
+    <p:graphicImage   width="200x211" value="../recursos/imagen/pack.png" />
+    <p:graphicImage width="200x211" value="../recursos/imagen/pack_2.png" />
+    <p:graphicImage width="200x211" value="../recursos/imagen/pack_3.png" style="margin-left: 150px" />
+  
+                                         
+                                         
+                                         
+                                         
+                                     </td>
+               
+                                    
+                                    
+                                    
+                                    
+                   </tr>
+                    </tbody>
+                    </table>
+                   
+                    </h:form>
+                </h:body>
+                    
+                    </h4>
+ 
+            
+    </div>   
+            </div>
+ <h:head> 
+<style>
+.cities{
+  background-color: black;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+} 
+</style>
+</h:head>
+ <body>
+
+<div class="cities">
+   
+  <h2>Direccion</h2>
+  <p>Alejandro Valdez y la Gasca / Ciudadela Universitaria</p>
+</div>
+
+<div class="cities">
+  <h2>Telefonos</h2>
+  <p>0998075827</p>
+</div>
+
+<div class="cities">
+  <h2>Horarios de Atencion</h2>
+  <p>Administración: 08h00 - 12h30 13h00- 16h00</p>
+  <p>Telefonos: 0998075827</p>
+</div>
+
+    <div class="cities">
+  <h2>Soporte en Tecnologias de la Informacion</h2>
+  <p>Correo: ebchalacan@uce.edu.ec</p>
+  <p>Telefonos: 0998075827</p>
+  <p>Horarios de Atension: 07h00 - 21h00</p>
+</div>
+    
+    <div class="cities">
+  <h2>BLOGS</h2>
+   <A HREF="http://peluqueriacorteingles.blogspot.com"><FONT COLOR="PURPLE">Blog de Prueba</FONT></A>
+</div>
+</body>
+            
+           
+    </h:body>
+        
+    </f:view>
+   
+</html>
