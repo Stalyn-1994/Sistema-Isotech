@@ -12,5 +12,4 @@ El sistema consta de los siguiente modulos:
 -Citas
 
 
-
-
+![Inicio](https://user-images.githubusercontent.com/61216816/120537236-aaa92300-c3aa-11eb-84eb-7f7fc5ce80fb.JPG)
